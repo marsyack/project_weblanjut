@@ -12,8 +12,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/Profile', [ProfileController::class, 'Profile']);
 Route::get('/Kontak', [KontakController::class, 'Kontak']);
 Route::get('/Donasi', [DonasiController::class, 'Donasi']);
+Route::get('/Donasi/create', [DonasiController::class, 'create'])->name('donation.create');
+Route::post('/donation', [DonasiController::class, 'store'])->name('donation.store');
 Route::resource('campaign', CampaignController::class);
-
-
 
 
