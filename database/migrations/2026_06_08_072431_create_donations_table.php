@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('campaign_category', function (Blueprint $table) {
+        Schema::create('donations', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-=======
             $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            //tidak perlu timestamps di tabel pivot kecuali dibutuhkan
->>>>>>> 0158a55ede74be15b11e3731810d53d6487a2851
+            $table->string('donor_name');
+            $table->decimal('amount', 12, 2);
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('campaign_category');
+        Schema::dropIfExists('donations');
     }
 };
