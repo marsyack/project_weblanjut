@@ -21,7 +21,5 @@ Route::resource('campaign', CampaignController::class);
 Route::get('/documentations', [DocumentationFileController::class, 'index']);
 Route::post('/documentations', [DocumentationFileController::class, 'store']);
 
-<<<<<<< HEAD
 Route::get('/feeds', [FeedController::class, 'index']);
-=======
->>>>>>> 0158a55ede74be15b11e3731810d53d6487a2851
+
